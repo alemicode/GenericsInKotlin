@@ -98,13 +98,24 @@ class CustomeList2<T> {
 
 //using generics just for input or outpur
 //u cannot use T as input
-interface NextItem<out T, in Y> {
+interface InAndOutItem<out T, in Y> {
     fun next(y: Y)
     fun next2(): T
 
 
 }
+//---------------------------------------------------//
 
+
+fun transportTestUse() {
+    transpoertTest(CustomeList<Cat>())
+}
+
+fun transpoertTest(item1: CustomeList<Cat>) {
+
+}
+
+//---------------------------------------------------//
 
 
 
