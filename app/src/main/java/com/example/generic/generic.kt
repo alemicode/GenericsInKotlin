@@ -10,6 +10,8 @@ open class Mamal() {}
 class Cat() : Mamal()
 
 
+//---------------------------------------------------//
+
 //if you want get instance of a list of cat you can use this fake cat list class
 class CatList {
 
@@ -52,10 +54,10 @@ fun getFakeItem() {
 
 //see? this is not a good way to code the same logic multiple time
 //whats the solution? using generics!
+//---------------------------------------------------//
 
 
-
-
+//---------------------------------------------------//
 //know look at this one
 //T is a unknown instance that can be generated to every instances like cat or mamal or Sting or Int or ....
 class CustomeList<T> {
@@ -73,6 +75,34 @@ fun addListItem() {
     var mamalList = CustomeList<Mamal>()
     var mamalList2: CustomeList<Mamal>? = null
     mamalList2 = mamalList
+}
+//---------------------------------------------------//
+
+
+//---------------------------------------------------//
+//another type is using list
+class CustomeList2<T> {
+
+    val data = mutableListOf<T>()
+    fun getList(position: Int): T? {
+        //you can use [] in kotlin instead of get
+        return data[position]
+    }
+
+    fun addList(T: T) {
+        data.add(T)
+    }
+
+}
+//---------------------------------------------------//
+
+//using generics just for input or outpur
+//u cannot use T as input
+interface NextItem<out T, in Y> {
+    fun next(y: Y)
+    fun next2(): T
+
+
 }
 
 
